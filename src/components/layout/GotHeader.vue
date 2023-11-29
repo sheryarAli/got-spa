@@ -35,7 +35,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #331C0E; /* Dark background for the header */
+  /* background-color: #331C0E;  */
   color: #fff; /* White text color */
 }
 .header span {

@@ -1,13 +1,14 @@
 <template>
-    <div>
+    <div class="custom_q">
 
         <ul>
             <li v-for="quote in quotes" :key="quote.url">
                 {{ quote.sentence }}
             </li>
         </ul>
+        <v-btn size="block" density="comfortable" color="#5865f2" @click="fetchQuotes">Get New Quotes</v-btn>
     </div>
-    <v-btn @click="fetchQuotes">Get New Quotes</v-btn>
+    
 </template>
   
 <script>
@@ -36,6 +37,10 @@ export default {
 </script>
   
 <style scoped>
+
+.custom_q{
+    justify-content: flex-end;
+}
 /* Add component-specific styles here */
 </style>
   

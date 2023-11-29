@@ -17,24 +17,3 @@ export const getHouseDetailsByName = (houseName) => axios.get(`${apiUrl}/house/$
     person: response.data,
     // members: response.data.swornMembers,
   }));
-
-//   export const getHouseDetailsByName = async (houseName) => {
-//     console.log(`${apiUrl}/${houseName}`)
-//     try {
-//       const response = await axios.get(`${apiUrl}/houses`);
-//       const house = response.data.find(h => h.name === houseName);
-  
-//       if (!house) {
-//         throw new Error(`House with name '${houseName}' not found.`);
-//       }
-  
-//       const membersResponse = await axios.all(house.swornMembers.map(memberUrl => axios.get(memberUrl)));
-//       const members = membersResponse.map(member => member.data);
-  
-//       return { house, members };
-//     } catch (error) {
-//       // Handle the error (e.g., log it, return a default value)
-//       console.error(error);
-//       return { house: {}, members: [] };
-//     }
-//   };

@@ -23,7 +23,7 @@
   <style scoped>
   .custom-footer {
     padding-top: 20px;
-  background-color: #331C0E; /* Updated background color */
+  /* background-color: #331C0E;  */
   text-decoration: none;
   color: white;
   font-weight: bold;

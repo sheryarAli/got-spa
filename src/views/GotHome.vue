@@ -56,10 +56,12 @@ export default {
 
 
 <style scoped>
+
+
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: #331C0E;
+  /* background-color: #331C0E; */
   padding: 1rem;
 }
 

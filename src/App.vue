@@ -1,9 +1,10 @@
 <template>
-  <v-app >
+  
     <!-- <div id="app"> -->
 
-      <!-- <div id="app">
-        <header>
+       <div class="custom_app">
+        <v-app color = "#BEB8AF" >
+        <!-- <header> 
           <h1>Game of Thrones</h1>
         </header>
         <nav><router-view />
@@ -47,8 +48,9 @@
 
       </v-container> -->
       <Footer />
-    <!-- </div> -->
-  </v-app>
+    </v-app>
+    </div>
+  
 </template>
 
 <script>
@@ -152,17 +154,25 @@ export default {
 </script>
 
 <style>
+
+
 .custom_app{
-  background-color: #BEB8AF;
+  /* background-color: #BEB8AF; */
+  background: url('https://c.animaapp.com/cuCqTOMO/img/untitled-2.png');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
 }
-#app {
+/* #app {
+  background-color: #0f0f0e;
+  background: url('https://c.animaapp.com/cuCqTOMO/img/untitled-2.png');
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
 
   
-  /* margin-top: 60px; */
-}
+
+} */
 
 h1 {
   font-size: 2em;
