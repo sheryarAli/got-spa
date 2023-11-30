@@ -2,7 +2,7 @@
     <div>
 
         <br>
-        
+
         <div class="text-field-container">
             <v-text-field :loading="loading" density="compact" variant="solo-filled" append-inner-icon="mdi-magnify"
                 single-line hide-details v-model="searchTerm" @input="updateFilteredPeople" label="Search Person"
@@ -13,15 +13,15 @@
 
         </div>
 
-  
+
 
 
         <v-list class="transparent-card2">
             <v-list-item v-for="person in filteredPeople" :key="person.url"
                 :to="{ name: 'PersonDetails', params: { name: person.slug } }">
                 <v-list-item-title>
-                    <p> {{ person.name }} - {{ person.house ? person.house.name : "House not known"}}</p>
-                    <!-- <p> {{ person.name }}</p> -->
+                    <p> {{ person.name }} ~ {{ person.house ? person.house.name : "House not known" }}</p>
+
                 </v-list-item-title>
             </v-list-item>
         </v-list>
@@ -75,6 +75,5 @@ ul {
     justify-content: center;
 
 }
-
 </style>
   
