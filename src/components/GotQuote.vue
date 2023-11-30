@@ -6,7 +6,7 @@
         
 
         <v-list class="transparent-card2">
-            <v-list-item v-for="quote in quotes" :key="quote.url">
+            <v-list-item class="custom_li" v-for="quote in quotes" :key="quote.url">
 
                 <p class="custom-quotation">"{{ quote.sentence }}"</p>
                 <span class="person-name"> <p>{{ quote.character.name }}</p></span>
@@ -89,6 +89,10 @@ export default {
     font-size: 0.8rem;    
     color: #ccc7c7;
     
+}
+.custom_li{
+    margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 </style>
   
