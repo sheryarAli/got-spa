@@ -17,7 +17,7 @@
 
 
         <v-list class="transparent-card2">
-            <v-list-item v-for="person in filteredPeople" :key="person.url"
+            <v-list-item class="custom_li" v-for="person in filteredPeople" :key="person.url"
                 :to="{ name: 'PersonDetails', params: { name: person.slug } }">
                 <v-list-item-title>
                     <p> {{ person.name }}</p>
@@ -74,7 +74,13 @@ export default {
     justify-content: center;
 
 }
+.custom_li{
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+}
 .custom_p{
+
+
     font-size: 0.8rem;
 }
 </style>
