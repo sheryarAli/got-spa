@@ -5,7 +5,6 @@
         <br>
         <br>
         <h2>{{ person.name }} </h2>
-        <!-- <div>{{ person.house ? person.house.name : 'Unknown House' }}</div> -->
 
         <br>
 
@@ -47,7 +46,6 @@ export default {
 
 .custom-quotation::before,
 .custom-quotation::after {
-    /* content: '"'; */
     font-size: 1.5rem;
     position: relative;
     top: 0;
@@ -65,6 +63,6 @@ export default {
     margin-right: -5px;
 }
 
-/* Add component-specific styles here */
+
 </style>
   

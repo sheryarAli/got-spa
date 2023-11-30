@@ -54,9 +54,9 @@ export default {
 .custom_btn{
     background-color: rgb(39, 5, 5) !important;
 }
-/*  */
 
-/* Custom quotation style */
+
+
 .custom-quotation {
     font-family: sans-serif;
     font-style: italic;
@@ -65,7 +65,7 @@ export default {
 
 .custom-quotation::before,
 .custom-quotation::after {
-    /* content: '"'; */
+    
     font-size: 1.5rem;
     position: relative;
     top: 0;
@@ -86,10 +86,9 @@ export default {
 
 .person-name {
     font-weight: bold;
-    font-size: 0.8rem;
-    /* Make the name bold */
+    font-size: 0.8rem;    
     color: #ccc7c7;
-    /* Customize the color */
+    
 }
 </style>
   

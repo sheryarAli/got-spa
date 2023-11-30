@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <v-app> -->
+
 
 
 
@@ -19,7 +19,7 @@
 
     <Footer />
 
-    <!-- </v-app> -->
+
   </div>
 </template>
 

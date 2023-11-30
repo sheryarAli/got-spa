@@ -10,9 +10,7 @@
         <br>
 
         <span><strong><p>Members</p></strong></span>
-        <!-- <ul>
-        <li v-for="member in members" :key="member.slug">{{ member }}</li>
-      </ul> -->
+   
 
 
         <v-list class="transparent-card2">
@@ -41,7 +39,7 @@ export default {
         };
     },
     async mounted() {
-        // Fetch house details using the name from the route params
+   
         const houseName = this.$route.params.name;
         const response = await getHouseDetailsByName(houseName);
         const membersNames = response.house[0].members.map(member => member.name);
@@ -54,6 +52,6 @@ export default {
 </script>
   
 <style scoped>
-/* Add component-specific styles here */
+
 </style>
   

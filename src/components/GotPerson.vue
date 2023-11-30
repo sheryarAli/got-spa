@@ -13,17 +13,7 @@
 
         </div>
 
-        <!-- <div class="text-center">
-
-            <ul>
-                <li v-for="person in filteredPeople" :key="person.url">
-                  
-                    <router-link :to="{ name: 'PersonDetails', params: { name: person.slug } }">{{ person.name
-                    }}</router-link>
-                    <div>{{ person.house ? person.house.name : 'Unknown House' }}</div>
-                </li>
-            </ul>
-        </div> -->
+  
 
 
         <v-list class="transparent-card2">
@@ -85,6 +75,5 @@ ul {
 
 }
 
-/* Add component-specific styles here */
 </style>
   
