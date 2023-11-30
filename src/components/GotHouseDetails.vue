@@ -1,6 +1,7 @@
 <template>
     <div>
-      <h2>{{ house }} </h2>
+      <!-- <h2>{{ house }} </h2> -->
+      <br>
 
       <span><strong>Members</strong></span>
       <!-- <ul>
@@ -8,7 +9,7 @@
       </ul> -->
 
 
-      <v-list>
+      <v-list class="transparent-card2">
             <v-list-item v-for="member in members" :key="member.url">
 
                 <p> {{ member }} </p>

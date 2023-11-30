@@ -10,9 +10,9 @@
             </v-text-field>
 
 
-            </div>
+        </div>
 
-            <!-- <div class="text-center">
+        <!-- <div class="text-center">
 
             <ul>
                 <li v-for="person in filteredPeople" :key="person.url">
@@ -25,15 +25,15 @@
         </div> -->
 
 
-            <v-list>
-                <v-list-item v-for="person in filteredPeople" :key="person.url"
-                    :to="{ name: 'PersonDetails', params: { name: person.slug } }">
-                    <v-list-item-title>
-                        {{ person.name }}
-                    </v-list-item-title>
-                </v-list-item>
-            </v-list>
-        </div>
+        <v-list class="transparent-card2">
+            <v-list-item v-for="person in filteredPeople" :key="person.url"
+                :to="{ name: 'PersonDetails', params: { name: person.slug } }">
+                <v-list-item-title>
+                    {{ person.name }}
+                </v-list-item-title>
+            </v-list-item>
+        </v-list>
+    </div>
 </template>
   
 <script>
@@ -73,13 +73,16 @@ ul {
 
 .max-width-50 {
     max-width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .text-field-container {
     display: flex;
     justify-content: center;
-    
+
 }
 
-/* Add component-specific styles here */</style>
+/* Add component-specific styles here */
+</style>
   

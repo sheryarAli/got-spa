@@ -1,4 +1,7 @@
-<template>
+<!-- <template>
+
+
+
  
     <v-footer class="custom-footer" app>
       <v-container>
@@ -32,4 +35,25 @@
 }
 
 
-  </style>
+  </style> -->
+
+
+  <template>
+    <footer class="caption">
+      <!-- <p>Double-click to edit a todo</p>
+      <p>Inspired by <a href="http://todomvc.com" target="_blank" rel="noopener">TodoMVC</a></p>
+      <p><a href="https://github.com/davidgaroro/vuetify-todo-pwa" target="_blank" rel="noopener">View on GitHub</a></p> -->
+    </footer>
+    </template>
+    
+    <style >
+    .footer {
+        position: absolute;
+        bottom: 0;
+        margin: 65px auto 0;
+        color: #bfbfbf;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+      
+      
+    </style>

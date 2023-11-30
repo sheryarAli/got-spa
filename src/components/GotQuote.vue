@@ -1,12 +1,8 @@
 <template>
     <div>
 
-        <!-- <ul>
-            <li v-for="quote in quotes" :key="quote.url">
-                {{ quote.sentence }}
-            </li>
-        </ul> -->
-        <v-list>
+
+        <v-list class="transparent-card2">
             <v-list-item v-for="quote in quotes" :key="quote.url">
 
                 <p class="custom-quotation">{{ quote.sentence }} </p>
@@ -14,7 +10,9 @@
 
             </v-list-item>
         </v-list>
-        <v-btn @click="fetchQuotes">Get New Quotes</v-btn>
+        <div class="button_custom">
+            <v-btn  @click="fetchQuotes">Replace</v-btn>
+        </div>
     </div>
 </template>
   
@@ -31,21 +29,24 @@ export default {
         async fetchQuotes() {
             const response = await getQuotes();
             this.quotes = response.data;
-            console.log(response.data);
-            // const membersNames = response.house[0].members.map(member => member.name);
+
 
         }
     },
     mounted() {
         this.fetchQuotes();
-        //   const response = await getQuotes();
-        //   this.quotes = response.data;
+
     },
 
 };
 </script>
   
 <style scoped>
+.button_custom {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /* Custom quotation style */
 .custom-quotation {
     font-family: sans-serif;
@@ -73,10 +74,12 @@ export default {
     margin-right: -5px;
 }
 
+
 .person-name {
     font-weight: bold;
     /* Make the name bold */
     color: #ccc7c7;
     /* Customize the color */
-}</style>
+}
+</style>
   

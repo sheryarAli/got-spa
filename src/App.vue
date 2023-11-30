@@ -1,26 +1,25 @@
 <template>
-  <!-- <div id="app"> -->
-
-  <div>
-    <v-app>
-      <!-- <v-btn @click="toggleTheme">toggle theme</v-btn> -->
+  <div id="app">
+    <!-- <v-app> -->
 
 
-     
 
 
-      <Header />
 
 
-      <v-container id="container">
-        <router-view />
+    <Header />
 
-      </v-container>
 
-      
+    <v-container id="container">
+      <router-view />
 
-      <Footer />
-    </v-app>
+    </v-container>
+
+
+
+    <Footer />
+
+    <!-- </v-app> -->
   </div>
 </template>
 
@@ -32,6 +31,7 @@
 
 import Footer from '@/components/layout/GotFooter.vue';
 import Header from '@/components/layout/GotHeader.vue';
+import './styles/main.css';
 
 
 
@@ -64,6 +64,11 @@ export default {
 
 
 <style>
+.flex-container {
+  flex-grow: 1;
+  /* Ensure the page takes up at least the full viewport height */
+}
+
 .custom_app {
   /* background-color: #BEB8AF; */
   background: url('https://c.animaapp.com/cuCqTOMO/img/untitled-2.png');
@@ -73,16 +78,16 @@ export default {
 }
 
 #app {
-
-  background: url('https://c.animaapp.com/cuCqTOMO/img/untitled-2.png');
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
 
 
 
+
 }
-#container{
+
+#container {
 
   max-width: 860px;
   padding: 8px;

@@ -5,12 +5,12 @@
         <br>
         <br>
         <h2>{{ person.name }} </h2>
-        <div>{{ person.house ? person.house.name : 'Unknown House' }}</div>
+        <!-- <div>{{ person.house ? person.house.name : 'Unknown House' }}</div> -->
 
         <br>
 
         <p><strong>Quotes</strong></p>
-        <v-list>
+        <v-list class="transparent-card2">
             <v-list-item v-for="quote in person.quotes" :key="quote.url">
 
                 <p class="custom-quotation"> {{ quote }} </p>

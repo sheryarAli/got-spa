@@ -15,8 +15,8 @@
 
       </v-text-field>
     </div>
-    <v-list>
-      <v-list-item v-for="house in filteredHouses" :key="house.url"
+    <v-list class="transparent-card2">
+      <v-list-item  v-for="house in filteredHouses" :key="house.url"
         :to="{ name: 'HouseDetails', params: { name: house.slug } }">
         <v-list-item-title>
           {{ house.name }}
@@ -70,12 +70,15 @@ export default {
 <style>
 .max-width-50 {
   max-width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .text-field-container {
     display: flex;
     justify-content: center;
     
 }
+
 </style>
 
 
