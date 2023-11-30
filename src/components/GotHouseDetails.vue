@@ -9,7 +9,7 @@
         <h2>{{ house }} </h2>
         <br>
 
-        <span><strong><p>Members</p></strong></span>
+        <h3>Members</h3>
    
 
 
@@ -52,6 +52,9 @@ export default {
 </script>
   
 <style scoped>
+.custom_p2{
+    font-size: 4 rem;
+}
 
 </style>
   
