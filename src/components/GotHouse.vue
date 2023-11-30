@@ -66,11 +66,7 @@ export default {
 
 </script>
 <style>
-.max-width-50 {
-  max-width: 50%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+
 
 .text-field-container {
   display: flex;

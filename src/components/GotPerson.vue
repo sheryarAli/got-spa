@@ -6,7 +6,7 @@
         <div class="text-field-container">
             <v-text-field :loading="loading" density="compact" variant="solo-filled" append-inner-icon="mdi-magnify"
                 single-line hide-details v-model="searchTerm" @input="updateFilteredPeople" label="Search Person"
-                class="max-width-50">
+                class="vtext_field">
 
             </v-text-field>
 
