@@ -5,9 +5,7 @@
 
     <v-card class="transparent-card">
       <v-card-title class="text-center justify-center py-6">
-      <!-- <h1 class="font-weight-bold text-h2 text-basil">
-          BASiL
-              </h1> -->
+    
       </v-card-title>
 
       <v-tabs  grow>
@@ -84,7 +82,7 @@ export default {
 <style scoped>
 
 .transparent-card {
-    background-color: rgba(255, 255, 255, 0.1); /* White with 50% opacity */
+    background-color: rgba(255, 255, 255, 0.1); 
 }
 </style>
 

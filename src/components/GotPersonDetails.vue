@@ -13,13 +13,11 @@
         <br>
 
         <p><strong>Quotes</strong></p>
-        <!-- <v-list class="transparent-card2"> -->
-        <!-- <v-list-item v-for="quote in quotes" :key="quote.url"> -->
+
 
         <p class="custom-quotation">"{{ randomQuote }}"</p>
 
-        <!-- </v-list-item> -->
-        <!-- </v-list> -->
+
         <br>
         <div class="custom_div_btn">
             <v-btn class="custom_btn" @click="selectNewQuote">
@@ -60,19 +58,19 @@ export default {
     methods: {
         selectNewQuote() {
             const quotesLength = this.quotes.length;
-            if(this.lastIndex === quotesLength - 1){
+            if (this.lastIndex === quotesLength - 1) {
                 this.lastIndex = 0;
             }
-            else if(quotesLength === 1){
+            else if (quotesLength === 1) {
                 this.lastIndex = 0;
-                
 
-            }else if(quotesLength > 1){
+
+            } else if (quotesLength > 1) {
                 this.lastIndex++;
 
             }
             this.randomQuote = this.quotes[this.lastIndex];
-            
+
         }
     },
 };
@@ -82,9 +80,10 @@ export default {
 .custom_div_btn {
     margin-top: 10px;
     margin-bottom: 10px;
-    
+
 }
-.custom_btn{
+
+.custom_btn {
     background-color: rgb(39, 5, 5) !important;
 }
 

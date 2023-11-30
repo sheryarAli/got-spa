@@ -55,23 +55,14 @@ export default {
 
 
 
-
-
-
-
-
 </script>
 
 
 
 <style>
-.flex-container {
-  flex-grow: 1;
-  /* Ensure the page takes up at least the full viewport height */
-}
 
 .custom_app {
-  /* background-color: #BEB8AF; */
+
   background: url('https://c.animaapp.com/cuCqTOMO/img/untitled-2.png');
   background-size: cover;
   background-position: center;
@@ -94,21 +85,6 @@ export default {
   padding: 8px;
 }
 
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-}
 
 router-view {
   padding: 20px;
