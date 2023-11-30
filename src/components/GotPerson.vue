@@ -73,7 +73,6 @@ ul {
 
 .max-width-50 {
     max-width: 50%;
-    /* Set the maximum width to 50% */
 }
 
 .text-field-container {

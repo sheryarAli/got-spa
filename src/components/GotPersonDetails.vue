@@ -8,13 +8,13 @@
         <div>{{ person.house ? person.house.name : 'Unknown House' }}</div>
 
         <br>
-      
+
         <p><strong>Quotes</strong></p>
         <v-list>
             <v-list-item v-for="quote in person.quotes" :key="quote.url">
-                
-                <p class="custom-quotation">    {{ quote }} </p>
-                
+
+                <p class="custom-quotation"> {{ quote }} </p>
+
             </v-list-item>
         </v-list>
     </div>
@@ -64,6 +64,7 @@ export default {
     right: -10px;
     margin-right: -5px;
 }
+
 /* Add component-specific styles here */
 </style>
   
