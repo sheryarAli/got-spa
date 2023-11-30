@@ -1,7 +1,10 @@
 
 
 <template>
-    <div>
+    <div v-if="!isLoaded">
+        Loading...
+    </div>
+    <div v-else>
         <br>
         <br>
         <h2>{{ person.name }} </h2>
@@ -11,7 +14,7 @@
 
         <p><strong>Quotes</strong></p>
         <v-list class="transparent-card2">
-            <v-list-item v-for="quote in person.quotes" :key="quote.url">
+            <v-list-item v-for="quote in quotes" :key="quote.url">
 
                 <p class="custom-quotation">"{{ quote }}"</p>
 
@@ -24,10 +27,16 @@
 import { getPersonDetailsByName } from '@/services/gotService';
 
 export default {
+    computed: {
+        isLoaded() {
+            return this.person && this.quotes.length > 0;
+        }
+    },
     data() {
         return {
             person: {},
             house: {},
+            quotes:[]
         };
     },
     async mounted() {
@@ -35,6 +44,7 @@ export default {
         const response = await getPersonDetailsByName(personName);
         this.person = response.person[0];
         this.house = response.person[0].house;
+        this.quotes = response.person[0].quotes;
         console.log(this.person)
     },
 };
