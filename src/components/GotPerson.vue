@@ -2,28 +2,38 @@
     <div>
 
 
-        <v-card class="mx-auto" color="grey-lighten-3" max-width="400">
-            <v-card-text>
-                <v-text-field :loading="loading" density="compact" variant="solo" append-inner-icon="mdi-magnify"
-                    single-line hide-details v-model="searchTerm" @input="updateFilteredPeople" label="Search Person">
+        <div class="text-field-container">
+            <v-text-field :loading="loading" density="compact" variant="solo-filled" append-inner-icon="mdi-magnify"
+                single-line hide-details v-model="searchTerm" @input="updateFilteredPeople" label="Search Person"
+                class="max-width-50">
 
-                </v-text-field>
-            </v-card-text>
-        </v-card>
+            </v-text-field>
 
 
-        <div class= "text-center">
+            </div>
+
+            <!-- <div class="text-center">
 
             <ul>
                 <li v-for="person in filteredPeople" :key="person.url">
-                    <!-- {{ person.name }}  -->
+                  
                     <router-link :to="{ name: 'PersonDetails', params: { name: person.slug } }">{{ person.name
                     }}</router-link>
                     <div>{{ person.house ? person.house.name : 'Unknown House' }}</div>
                 </li>
             </ul>
+        </div> -->
+
+
+            <v-list>
+                <v-list-item v-for="person in filteredPeople" :key="person.url"
+                    :to="{ name: 'PersonDetails', params: { name: person.slug } }">
+                    <v-list-item-title>
+                        {{ person.name }}
+                    </v-list-item-title>
+                </v-list-item>
+            </v-list>
         </div>
-    </div>
 </template>
   
 <script>
@@ -57,10 +67,20 @@ export default {
 </script>
   
 <style scoped>
-
-ul{
+ul {
     text-decoration: none;
 }
-/* Add component-specific styles here */
-</style>
+
+.max-width-50 {
+    max-width: 50%;
+    /* Set the maximum width to 50% */
+}
+
+.text-field-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* Add component-specific styles here */</style>
   

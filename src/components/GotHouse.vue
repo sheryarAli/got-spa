@@ -1,23 +1,33 @@
 // House.vue
 <template>
   <div>
-    
 
-    <v-card class="mx-auto" color="grey-lighten-3" max-width="400">
+
+  <!-- <v-card class="mx-auto" color="grey-lighten-3" max-width="400">
       <v-card-text>
-        <v-text-field :loading="loading" density="compact" variant="solo" 
-          append-inner-icon="mdi-magnify" single-line hide-details v-model="searchTerm" @input="updateFilteredHouses"
-          label="Search Houses">
-
-        </v-text-field>
+        
       </v-card-text>
-    </v-card>
+      </v-card> -->
 
-    <ul>
-      <li v-for="house in filteredHouses" :key="house.url">
-        <router-link :to="{ name: 'HouseDetails', params: { name: house.slug } }">{{ house.name }}</router-link>
-      </li>
-    </ul>
+    <div class="text-field-container">
+      <v-text-field :loading="loading" density="compact" variant="solo-filled" append-inner-icon="mdi-magnify" single-line
+        hide-details v-model="searchTerm" @input="updateFilteredHouses" label="Search Houses" class="max-width-50">
+
+      </v-text-field>
+    </div>
+    <v-list>
+      <v-list-item v-for="house in filteredHouses" :key="house.url"
+        :to="{ name: 'HouseDetails', params: { name: house.slug } }">
+        <v-list-item-title>
+          {{ house.name }}
+        </v-list-item-title>
+      </v-list-item>
+    </v-list>
+
+
+
+
+
   </div>
 </template>
 
@@ -57,3 +67,15 @@ export default {
 };
 
 </script>
+<style>
+.max-width-50 {
+  max-width: 50%;
+}
+.text-field-container {
+    display: flex;
+    justify-content: center;
+    
+}
+</style>
+
+

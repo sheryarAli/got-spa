@@ -3,7 +3,10 @@
   <div>
 
 
-    <nav class="navbar">
+
+
+
+  <!-- <nav class="navbar">
       <ul class="nav-list">
         <li class="nav-item">
           <router-link to="/houses">Houses</router-link>
@@ -15,49 +18,105 @@
           <router-link to="/quotes">Quotes</router-link>
         </li>
       </ul>
-    </nav>
+            </nav> -->
+
+
+    <v-card>
+      <v-card-title class="text-center justify-center py-6">
+      <!-- <h1 class="font-weight-bold text-h2 text-basil">
+          BASiL
+              </h1> -->
+      </v-card-title>
+
+      <v-tabs v-model="tab" grow>
+        <v-tab v-for="route in routes" :key="route.name" :to="{ name: route.name }">
+          {{ route.name }}
+          <!-- <router-link to="/houses">Houses</router-link> -->
+        </v-tab>
+      </v-tabs>
+
+      <v-window v-model="tab">
+
+        <router-view />
+      <!-- <v-window-item v-for="item in items" :key="item" :value="item">
+          <v-card flat>
+          <v-card-text>{{ text }}</v-card-text>
+          </v-card>
+            </v-window-item> -->
+      </v-window>
+    </v-card>
 
 
 
 
 
-
-
-
-
-
-  <!-- <nav>
-      <router-link to="/houses">Houses</router-link>
-      <router-link to="/people">People</router-link>
-      <router-link to="/quotes">Quotes</router-link>
-      </nav> -->
-    <router-view />
-  <!-- <House />
-    <Person />
-      <Quote /> -->
   </div>
 </template>
 
 <script>
-// import House from '@/components/GotHouse.vue';
-// import Person from '@/components/GotPerson.vue';
-// import Quote from '@/components/GotQuote.vue';
+
+import { useRoute, useRouter } from 'vue-router';
+
 
 export default {
   name: 'Main_Home',
 
-  // components: {
-  //   House,
-  //   Person,
-  //   Quote,
-  // },
+  setup() {
+
+
+
+
+    const currentRoute = useRoute();
+    const router = useRouter();
+    const uniqueRouteNames = new Set();
+    let activeTab = 'Houses';
+
+    const flattenRoutes = (routes) => {
+      return routes.reduce((result, route) => {
+ 
+        if (!uniqueRouteNames.has(route.name)) {
+          result.push(route);
+          uniqueRouteNames.add(route.name);
+        }
+        if (route.children) {
+          result.push(...flattenRoutes(route.children));
+        }
+        return result;
+      }, []);
+    };
+
+    const allRoutes = flattenRoutes(currentRoute.matched);
+    const filteredRoutes = allRoutes.filter(route =>
+      ['Houses', 'People', 'Quotes'].includes(route.name)
+    );
+
+    router.push({ name: activeTab });
+
+    return {
+      routes: filteredRoutes,
+      activeTab,
+    };
+  },
+
+  data() {
+    return {
+      tab: 'Appetizers',
+      items: [
+        'houses', 'peoples', 'quotes',
+      ],
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    }
+  },
+
+
+
+
+
 };
 </script>
 
 
 <style scoped>
-
-
 .navbar {
   display: flex;
   justify-content: center;

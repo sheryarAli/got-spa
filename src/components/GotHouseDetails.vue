@@ -1,9 +1,20 @@
 <template>
     <div>
-      <h2>{{ house }} Members</h2>
-      <ul>
+      <h2>{{ house }} </h2>
+
+      <span><strong>Members</strong></span>
+      <!-- <ul>
         <li v-for="member in members" :key="member.slug">{{ member }}</li>
-      </ul>
+      </ul> -->
+
+
+      <v-list>
+            <v-list-item v-for="member in members" :key="member.url">
+
+                <p> {{ member }} </p>
+
+            </v-list-item>
+        </v-list>
     </div>
   </template>
   
