@@ -13,7 +13,7 @@
         <v-list class="transparent-card2">
             <v-list-item v-for="quote in person.quotes" :key="quote.url">
 
-                <p class="custom-quotation">" {{ quote }} "</p>
+                <p class="custom-quotation">"{{ quote }}"</p>
 
             </v-list-item>
         </v-list>

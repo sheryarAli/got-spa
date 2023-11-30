@@ -1,15 +1,20 @@
 <template>
     <div>
 
+        <br>
+        <br>
+        <p><strong>Quotes</strong></p>
+        <br>
 
         <v-list class="transparent-card2">
             <v-list-item v-for="quote in quotes" :key="quote.url">
 
-                <p class="custom-quotation">" {{ quote.sentence }} "</p>
+                <p class="custom-quotation">"{{ quote.sentence }}"</p>
                 <span class="person-name"> <p>{{ quote.character.name }}</p></span>
 
             </v-list-item>
         </v-list>
+        <br>
         <div class="custom_div_btn">
             <v-btn class="custom_btn"  @click="fetchQuotes"><p>Replace</p></v-btn>
         </div>
@@ -82,6 +87,7 @@ export default {
 
 .person-name {
     font-weight: bold;
+    font-size: 0.8rem;
     /* Make the name bold */
     color: #ccc7c7;
     /* Customize the color */
