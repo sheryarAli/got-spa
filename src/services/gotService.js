@@ -5,6 +5,8 @@ const apiUrl = 'https://api.gameofthronesquotes.xyz/v1';
 
 export const getHouses = () => axios.get(`${apiUrl}/houses`);
 export const getPeople = () => axios.get(`${apiUrl}/characters`);
+export const getPeopleWithImages = () => axios.get(`https://thronesapi.com/api/v2/Characters`);
+// 
 export const getQuotes = () => axios.get(`${apiUrl}/random/5`);
 
 // TODO: update to make code clean. 

@@ -5,13 +5,13 @@
         <v-list class="transparent-card2">
             <v-list-item v-for="quote in quotes" :key="quote.url">
 
-                <p class="custom-quotation">{{ quote.sentence }} </p>
+                <p class="custom-quotation">" {{ quote.sentence }} "</p>
                 <span class="person-name"> <p>{{ quote.character.name }}</p></span>
 
             </v-list-item>
         </v-list>
-        <div class="button_custom">
-            <v-btn  @click="fetchQuotes"><p>Replace</p></v-btn>
+        <div class="custom_div_btn">
+            <v-btn class="custom_btn"  @click="fetchQuotes"><p>Replace</p></v-btn>
         </div>
     </div>
 </template>
@@ -42,10 +42,15 @@ export default {
 </script>
   
 <style scoped>
-.button_custom {
+.custom_div_btn {
     margin-top: 10px;
     margin-bottom: 10px;
+    
 }
+.custom_btn{
+    background-color: rgb(39, 5, 5) !important;
+}
+/*  */
 
 /* Custom quotation style */
 .custom-quotation {
@@ -56,7 +61,7 @@ export default {
 
 .custom-quotation::before,
 .custom-quotation::after {
-    content: '"';
+    /* content: '"'; */
     font-size: 1.5rem;
     position: relative;
     top: 0;

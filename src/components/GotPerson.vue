@@ -58,6 +58,7 @@ export default {
         },
     },
     async mounted() {
+        // const response2 = await getPeopleWithImages();
         const response = await getPeople();
         this.people = response.data;
         this.filteredPeople = this.people;
