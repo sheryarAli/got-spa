@@ -1,17 +1,21 @@
 <template>
-    <div>
+    <div v-if="!isLoaded">
+        Loading...
+    </div>
+    <div v-else>
         <br>
         <br>
-      <h2>{{ house }} </h2>
-      <br>
 
-      <span><strong>Members</strong></span>
-      <!-- <ul>
+        <h2>{{ house }} </h2>
+        <br>
+
+        <span><strong><p>Members</p></strong></span>
+        <!-- <ul>
         <li v-for="member in members" :key="member.slug">{{ member }}</li>
       </ul> -->
 
 
-      <v-list class="transparent-card2">
+        <v-list class="transparent-card2">
             <v-list-item v-for="member in members" :key="member.url">
 
                 <p> {{ member }} </p>
@@ -19,32 +23,37 @@
             </v-list-item>
         </v-list>
     </div>
-  </template>
+</template>
   
-  <script>
-  import { getHouseDetailsByName } from '@/services/gotService';
-  
-  export default {
+<script>
+import { getHouseDetailsByName } from '@/services/gotService';
+
+export default {
+    computed: {
+        isLoaded() {
+            return this.house && this.members.length > 0;
+        }
+    },
     data() {
-      return {
-        house: {},
-        members: [],
-      };
+        return {
+            house: {},
+            members: [],
+        };
     },
     async mounted() {
-      // Fetch house details using the name from the route params
-      const houseName = this.$route.params.name;
-      const response = await getHouseDetailsByName(houseName);
-      const membersNames = response.house[0].members.map(member => member.name);
-      
-      this.house = response.house[0].name;
-      this.members = membersNames;
-    
+        // Fetch house details using the name from the route params
+        const houseName = this.$route.params.name;
+        const response = await getHouseDetailsByName(houseName);
+        const membersNames = response.house[0].members.map(member => member.name);
+
+        this.house = response.house[0].name;
+        this.members = membersNames;
+
     },
-  };
-  </script>
+};
+</script>
   
-  <style scoped>
-  /* Add component-specific styles here */
-  </style>
+<style scoped>
+/* Add component-specific styles here */
+</style>
   

@@ -1,17 +1,37 @@
+@font-face {
+    font-family: 'Trajan Pro';
+    src: url('../assets/fonts/Trajan-Pro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
-
+/* @font-face {
+    font-family: 'Trajan Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Trajan Pro Regular'), url('../assets/fonts/TrajanPro-Regular.woff') format('woff');
+    } */
+    
 .transparent-card2 {
     margin-left: 20px;
     margin-right: 20px;
-      background-color: rgba(255, 255, 255, 0.0) !important; /* White with 50% opacity */
-  }
+    background-color: rgba(255, 255, 255, 0.0) !important;
+    /* White with 50% opacity */
+}
 
-  body {
+body {
     background-image: url('https://c.animaapp.com/cuCqTOMO/img/untitled-2.png');
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     height: 100%;
     margin: 0;
+    font-family: "Trajan Pro", serif;
+    
 }
-
+p {
+    font-family: 'Trajan Pro', serif;
+}
+h2{
+    font-family: 'Trajan Pro', serif;
+}

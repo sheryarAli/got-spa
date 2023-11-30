@@ -12,7 +12,7 @@
 
       <v-tabs  grow>
         <v-tab v-for="route in routes" :key="route.name" :to="{ name: route.name }">
-          {{ route.name }}
+          <p >{{ route.name }}</p>
          
         </v-tab>
       </v-tabs>
@@ -82,6 +82,7 @@ export default {
 
 
 <style scoped>
+
 .transparent-card {
     background-color: rgba(255, 255, 255, 0.1); /* White with 50% opacity */
 }

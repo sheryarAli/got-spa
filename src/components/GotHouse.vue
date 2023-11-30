@@ -19,7 +19,7 @@
       <v-list-item  v-for="house in filteredHouses" :key="house.url"
         :to="{ name: 'HouseDetails', params: { name: house.slug } }">
         <v-list-item-title>
-          {{ house.name }}
+          <p>{{ house.name }} </p>
         </v-list-item-title>
       </v-list-item>
     </v-list>

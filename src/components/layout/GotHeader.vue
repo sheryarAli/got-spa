@@ -1,7 +1,7 @@
 <template>
 <header class="header">
     <div class="container text-center">
-        <span class="custom-title">Game of Thrones</span>
+        <span class="custom-title"><p>Game of Thrones</p></span>
     </div>
   </header>
       <!-- <v-app-bar app color="primary" dark> -->

@@ -6,12 +6,12 @@
             <v-list-item v-for="quote in quotes" :key="quote.url">
 
                 <p class="custom-quotation">{{ quote.sentence }} </p>
-                <span class="person-name"> {{ quote.character.name }}</span>
+                <span class="person-name"> <p>{{ quote.character.name }}</p></span>
 
             </v-list-item>
         </v-list>
         <div class="button_custom">
-            <v-btn  @click="fetchQuotes">Replace</v-btn>
+            <v-btn  @click="fetchQuotes"><p>Replace</p></v-btn>
         </div>
     </div>
 </template>

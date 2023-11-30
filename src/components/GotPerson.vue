@@ -29,7 +29,7 @@
             <v-list-item v-for="person in filteredPeople" :key="person.url"
                 :to="{ name: 'PersonDetails', params: { name: person.slug } }">
                 <v-list-item-title>
-                    {{ person.name }}
+                <p> {{ person.name }}</p>
                 </v-list-item-title>
             </v-list-item>
         </v-list>
