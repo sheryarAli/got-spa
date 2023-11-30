@@ -20,7 +20,8 @@
             <v-list-item v-for="person in filteredPeople" :key="person.url"
                 :to="{ name: 'PersonDetails', params: { name: person.slug } }">
                 <v-list-item-title>
-                    <p> {{ person.name }} ~ {{ person.house ? person.house.name : "House not known" }}</p>
+                    <p> {{ person.name }}</p>
+                    <p class="custom_p">{{ person.house ? person.house.name : "House not known" }}</p>
 
                 </v-list-item-title>
             </v-list-item>
@@ -60,9 +61,7 @@ export default {
 </script>
   
 <style scoped>
-ul {
-    text-decoration: none;
-}
+
 
 .max-width-50 {
     max-width: 50%;
@@ -74,6 +73,9 @@ ul {
     display: flex;
     justify-content: center;
 
+}
+.custom_p{
+    font-size: 0.8rem;
 }
 </style>
   
