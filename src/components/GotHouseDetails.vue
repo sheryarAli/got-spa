@@ -1,6 +1,8 @@
 <template>
     <div>
-      <!-- <h2>{{ house }} </h2> -->
+        <br>
+        <br>
+      <h2>{{ house }} </h2>
       <br>
 
       <span><strong>Members</strong></span>
