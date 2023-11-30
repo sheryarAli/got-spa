@@ -30,7 +30,9 @@ p {
 h2{
     font-family: 'Trajan Pro', serif;
 }
-
+h3{
+    font-family: 'Trajan Pro', serif;
+}
 .vtext_field{
     max-width: 50%;
     margin-top: 10px;

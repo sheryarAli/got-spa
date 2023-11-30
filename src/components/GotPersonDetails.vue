@@ -5,6 +5,7 @@
         <br>
         <br>
         <h2>{{ person.name }} </h2>
+        <h3>{{ house ? house.name : "House not known"}} </h3>
 
         <br>
 
@@ -26,12 +27,14 @@ export default {
     data() {
         return {
             person: {},
+            house: {},
         };
     },
     async mounted() {
         const personName = this.$route.params.name;
         const response = await getPersonDetailsByName(personName);
         this.person = response.person[0];
+        this.house = response.person[0].house;
         console.log(this.person)
     },
 };

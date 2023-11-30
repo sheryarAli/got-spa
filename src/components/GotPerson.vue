@@ -20,7 +20,8 @@
             <v-list-item v-for="person in filteredPeople" :key="person.url"
                 :to="{ name: 'PersonDetails', params: { name: person.slug } }">
                 <v-list-item-title>
-                    <p> {{ person.name }}</p>
+                    <p> {{ person.name }} - {{ person.house ? person.house.name : "House not known"}}</p>
+                    <!-- <p> {{ person.name }}</p> -->
                 </v-list-item-title>
             </v-list-item>
         </v-list>
