@@ -1,7 +1,8 @@
 <template>
     <div>
 
-
+        <br>
+        
         <div class="text-field-container">
             <v-text-field :loading="loading" density="compact" variant="solo-filled" append-inner-icon="mdi-magnify"
                 single-line hide-details v-model="searchTerm" @input="updateFilteredPeople" label="Search Person"
@@ -29,7 +30,7 @@
             <v-list-item v-for="person in filteredPeople" :key="person.url"
                 :to="{ name: 'PersonDetails', params: { name: person.slug } }">
                 <v-list-item-title>
-                <p> {{ person.name }}</p>
+                    <p> {{ person.name }}</p>
                 </v-list-item-title>
             </v-list-item>
         </v-list>

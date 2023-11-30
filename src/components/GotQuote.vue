@@ -3,8 +3,7 @@
 
         <br>
         <br>
-        <p><strong>Quotes</strong></p>
-        <br>
+        
 
         <v-list class="transparent-card2">
             <v-list-item v-for="quote in quotes" :key="quote.url">
@@ -16,7 +15,7 @@
         </v-list>
         <br>
         <div class="custom_div_btn">
-            <v-btn class="custom_btn"  @click="fetchQuotes"><p>Replace</p></v-btn>
+            <v-btn class="custom_btn"  @click="fetchQuotes"><p>Replace Quotes</p></v-btn>
         </div>
     </div>
 </template>
