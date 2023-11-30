@@ -8,18 +8,24 @@
         <br>
         <br>
         <h2>{{ person.name }} </h2>
-        <h3>{{ house ? house.name : "House not known"}} </h3>
+        <h3>{{ house ? house.name : "House not known" }} </h3>
 
         <br>
 
         <p><strong>Quotes</strong></p>
-        <v-list class="transparent-card2">
-            <v-list-item v-for="quote in quotes" :key="quote.url">
+        <!-- <v-list class="transparent-card2"> -->
+        <!-- <v-list-item v-for="quote in quotes" :key="quote.url"> -->
 
-                <p class="custom-quotation">"{{ quote }}"</p>
+        <p class="custom-quotation">"{{ randomQuote }}"</p>
 
-            </v-list-item>
-        </v-list>
+        <!-- </v-list-item> -->
+        <!-- </v-list> -->
+        <br>
+        <div class="custom_div_btn">
+            <v-btn class="custom_btn" @click="selectNewQuote">
+                <p>Other Quote</p>
+            </v-btn>
+        </div>
     </div>
 </template>
   
@@ -36,7 +42,9 @@ export default {
         return {
             person: {},
             house: {},
-            quotes:[]
+            quotes: [],
+            randomQuote: '',
+            lastIndex: -1
         };
     },
     async mounted() {
@@ -45,12 +53,41 @@ export default {
         this.person = response.person[0];
         this.house = response.person[0].house;
         this.quotes = response.person[0].quotes;
-        console.log(this.person)
+        console.log(this.quotes);
+        this.selectNewQuote();
+
+    },
+    methods: {
+        selectNewQuote() {
+            const quotesLength = this.quotes.length;
+            if(this.lastIndex === quotesLength - 1){
+                this.lastIndex = 0;
+            }
+            else if(quotesLength === 1){
+                this.lastIndex = 0;
+                
+
+            }else if(quotesLength > 1){
+                this.lastIndex++;
+
+            }
+            this.randomQuote = this.quotes[this.lastIndex];
+            
+        }
     },
 };
 </script>
   
 <style scoped>
+.custom_div_btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+.custom_btn{
+    background-color: rgb(39, 5, 5) !important;
+}
+
 .custom-quotation {
     font-family: sans-serif;
     font-style: italic;
@@ -75,7 +112,5 @@ export default {
     right: -10px;
     margin-right: -5px;
 }
-
-
 </style>
   
